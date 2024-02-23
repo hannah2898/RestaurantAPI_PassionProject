@@ -145,7 +145,27 @@ namespace RestaurantAPI_PassionProject.Controllers
 
             return Ok();
         }
-
+        /// <summary>
+        /// Retrieves a list of menu items for a specific category.
+        /// </summary>
+        /// <param name="categoryId">The ID of the category.</param>
+        /// <returns>An IHttpActionResult containing the list of menu items associated with the category.</returns>
+        [HttpGet]
+        [Route("api/CategoryData/ListMenuItemsForCategory/{categoryId}")]
+        public IHttpActionResult ListMenuItemsForCategory(int categoryId)
+        {
+            Debug.WriteLine("CATEGORY DATA CONTROLLER" +categoryId);
+            var menuItems = db.Menus.Where(item => item.CategoryId == categoryId)
+                                        .Select(item => new MenuDto
+                                        {
+                                            ItemID = item.ItemID,
+                                            ItemName = item.ItemName,
+                                            ItemDescription = item.ItemDescription,
+                                            Price = item.Price,
+                                            CategoryName = item.Category.CategoryName
+                                        });
+            return Ok(menuItems);
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

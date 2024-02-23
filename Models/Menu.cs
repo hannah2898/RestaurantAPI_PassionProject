@@ -21,7 +21,7 @@ namespace RestaurantAPI_PassionProject.Models
         //A menu item will belong to a category
         //An category can have any menu items
         [ForeignKey("Category")]
-        public int CategoryID { get; set; }
+        public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
 
 
@@ -34,7 +34,7 @@ namespace RestaurantAPI_PassionProject.Models
         public string ItemName { get; set; }
         public string ItemDescription { get; set; }
         public double Price { get; set; }
-        public int CategoryID { get; set; }
+        public int CategoryId { get; set; }
         public string CategoryName { get; set; }
 
     }

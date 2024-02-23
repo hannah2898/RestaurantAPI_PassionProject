@@ -191,6 +191,8 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\MenuDataController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\OrdersDataController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -213,6 +215,10 @@
     <Compile Include="Migrations\202402072355501_order-menu.cs" />
     <Compile Include="Migrations\202402072355501_order-menu.designer.cs">
       <DependentUpon>202402072355501_order-menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402212310145_menucategory.cs" />
+    <Compile Include="Migrations\202402212310145_menucategory.designer.cs">
+      <DependentUpon>202402212310145_menucategory.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -309,6 +315,14 @@
     <Content Include="Views\Category\List.cshtml" />
     <Content Include="Views\Category\DeleteConfirm.cshtml" />
     <Content Include="Views\Category\New.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\ListOrdersForMenuItem.cshtml" />
+    <Content Include="Views\Orders\Error.cshtml" />
+    <Content Include="Views\Category\Details.cshtml" />
+    <Content Include="Views\Orders\List.cshtml" />
+    <Content Include="Views\Orders\MenuItemsForOrder.cshtml" />
+    <Content Include="Views\Orders\OrdersForMenuItem.cshtml" />
+    <Content Include="Views\Orders\AddMenuItemToOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -355,6 +369,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402072355501_order-menu.resx">
       <DependentUpon>202402072355501_order-menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402212310145_menucategory.resx">
+      <DependentUpon>202402212310145_menucategory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

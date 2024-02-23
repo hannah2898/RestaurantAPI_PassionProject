@@ -118,3 +118,4 @@ C:\Users\hanna\source\repos\RestaurantAPI_PassionProject\obj\Debug\RestaurantAPI
 C:\Users\hanna\source\repos\RestaurantAPI_PassionProject\obj\Debug\RestaurantAPI_PassionProject.Migrations.menuorder.resources
 C:\Users\hanna\source\repos\RestaurantAPI_PassionProject\obj\Debug\RestaurantAPI_PassionProject.Migrations.categorymenu.resources
 C:\Users\hanna\source\repos\RestaurantAPI_PassionProject\obj\Debug\RestaurantAPI_PassionProject.Migrations.ordermenu.resources
+C:\Users\hanna\source\repos\RestaurantAPI_PassionProject\obj\Debug\RestaurantAPI_PassionProject.Migrations.menucategory.resources

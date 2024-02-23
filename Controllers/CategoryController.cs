@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using RestaurantAPI_PassionProject.Models.ViewModels;
 using RestaurantAPI_PassionProject.Models;
 using System.Web.Script.Serialization;
+using Newtonsoft.Json;
+using System.Linq;
 
 namespace RestaurantAPI_PassionProject.Controllers
 {
@@ -64,6 +66,25 @@ namespace RestaurantAPI_PassionProject.Controllers
                 return RedirectToAction("Error");
             }
         }
+      
+        // GET: Category/Details/5
+        public ActionResult Details(int id)
+        {
+            // Get details of a specific category item
+            DetailsMenu ViewModel = new DetailsMenu();
+            string url = "ListMenuItemsForCategory/" + id;
+            HttpResponseMessage response = client.GetAsync(url).Result;
+
+            var responseContent = response.Content.ReadAsStringAsync().Result;
+            var selectedCategory = JsonConvert.DeserializeObject<IEnumerable<MenuDto>> (responseContent);
+            var menus = JsonConvert.DeserializeObject<IEnumerable<MenuDto>>(responseContent);
+
+            ViewModel.selectedcategory = selectedCategory.FirstOrDefault();
+            ViewModel.Menus = menus;
+            Debug.WriteLine("Response Content"+responseContent);
+            return View(ViewModel);
+        }
+    
 
         // GET: Category/DeleteConfirm/5
         public ActionResult DeleteConfirm(int id)
